@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MultiPaste Chrome Extension</title>
+	<style type="text/css">
+		body{
+			font-family: 'helvetica';
+			margin-bottom: 0px;
+		}
+		section{
+			background-color: rgba(228, 228, 228, 0.5);
+			border-style: dotted;
+			border-width: 2px;
+			border-color: rgb(228, 228, 228);
+			margin: 0px -8px 12px;
+			padding: 4px 8px 8px;
+			height: 12px;
+		}
+		#wrapper{
+			width: 450px;
+		}
+		.entry{
+			width: 280px;
+			display: inline-block;
+			padding-left: 10px;
+			padding-right: 10px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			max-height: 40px;
+		}
+		.icon{
+			width: 40px;
+			display: inline;
+			vertical-align: top;
+			border-radius: 10px;
+			border-width: 0px;
+			background-color: grey;
+			height: 20px;
+			margin-left: 5px;
+			color: white;
+			cursor: pointer;
+		}
+		.date {
+			width: 50px;
+			background-color: rgb(228, 228, 228);
+			font-size: 11px;
+			text-align: center;
+			display: inline-block;
+			vertical-align: top;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		h2{
+			margin-bottom: 15px;
+		}
+		hr{
+			border-top: 1px dotted #8c8b8b;
+			border-bottom: 1px dotted #fff;
+		}
+		#saveEntries{
+			float: left;
+		}
+		#clearHistory{
+			float: right;	
+		}
+		#clearHistory, #changeEntries{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../css/fontello.css">
+</head>
+<body>
+<h2>Your Clipboard History</h2>
+<section>
+	<span id="saveEntries">save <span id="changeEntries">XXX</span> entries</span>
+	<span id="clearHistory">clear history</span>
+</section>
+<div id="wrapper">
+</div>
+<div id="wrapperTmp"></div>
+</body>
+<script src="../js/index.js"></script>
+</html>

@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+
+  "name": "MultiPaste",
+  "description": "MultiPaste allows users to store multiple values in their clipboard and easily paste them.",
+  "version": "1.0",
+  "browser_action": {
+    "default_title": "Show clipboard",
+    "default_popup": "html/index.html"
+  },
+  "background": {
+    "page": "html/background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "css": ["css/contentScript.css"],
+      "js": ["js/contentScript.js", "js/jquery-3.3.1.min.js", "js/caret.js"],
+      "persistent": false
+    }
+  ],
+  "icons": { "16": "images/icon_16.png",
+          "128": "images/icon_128.png" },
+  "commands": {
+    "pastePlus": {
+      "suggested_key": {
+        "default": "Ctrl+Down"
+      },
+      "description": "Paste previous entry"
+    },
+    "pastePlus1": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+V"
+      },
+      "description": "Activate MultiPaste"
+    },
+    "pasteMinus": {
+      "suggested_key": {
+        "default": "Ctrl+Up"
+      },
+      "description": "Paste next entry"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardWrite",
+    "clipboardRead"
+  ]
+}
